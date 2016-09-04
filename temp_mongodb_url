@@ -1,0 +1,1 @@
+env | grep DB.*PORT_27017_TCP= | sed -e 's|.*tcp://||' | paste -sd , | cut -d',' -f1

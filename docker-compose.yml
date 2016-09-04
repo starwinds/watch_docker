@@ -1,0 +1,16 @@
+mongodb:
+ image: hcwoo/mongodb
+ ports:
+  - "27017"
+alarm:
+ image: hcwoo/watch_alarm
+ ports:
+  - "8080"
+ links:
+  - mongodb:db
+api:
+ build: .
+ ports:
+  - "8080" 
+ links:
+  - mongodb:db
